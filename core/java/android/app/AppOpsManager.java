@@ -1330,6 +1330,11 @@ public class AppOpsManager {
      */
     private static HashMap<String, Integer> sPermToOp = new HashMap<>();
 
+    /**
+     * Mapping from an app op code to the corresponding background app op code.
+     */
+    private static HashMap<Integer, Integer> sOpToBgOp = new HashMap<>();
+
     private static HashMap<String, Integer> sNameToOp = new HashMap<String, Integer>();
 
     /**
@@ -1491,6 +1496,22 @@ public class AppOpsManager {
      */
     public static boolean opAllowsReset(int op) {
         return !sOpDisableReset[op];
+    }
+
+    /**
+     * Retrieve the background op of an op
+     * @hide
+     */
+    public static int opToBgOp(int op) {
+        return sOpToBgOp.getOrDefault(op, OP_NONE);
+    }
+
+    /**
+     * Check whether op has a matching bg op
+     * @hide
+     */
+    public static boolean isBgOp(int op) {
+        return sOpToBgOp.containsKey(op);
     }
 
     /**
