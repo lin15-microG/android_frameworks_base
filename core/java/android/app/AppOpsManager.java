@@ -1050,7 +1050,7 @@ public class AppOpsManager {
             AppOpsManager.MODE_ALLOWED,
             AppOpsManager.MODE_ALLOWED,
             AppOpsManager.MODE_ALLOWED,
-            AppOpsManager.MODE_DEFAULT, // OP_GET_USAGE_STATS
+            AppOpsManager.MODE_IGNORED, // OP_GET_USAGE_STATS
             AppOpsManager.MODE_ALLOWED,
             AppOpsManager.MODE_ALLOWED,
             AppOpsManager.MODE_IGNORED, // OP_PROJECT_MEDIA
@@ -1138,7 +1138,7 @@ public class AppOpsManager {
             AppOpsManager.MODE_ALLOWED, // OP_WAKE_LOCK
             AppOpsManager.MODE_ALLOWED, // OP_MONITOR_LOCATION
             AppOpsManager.MODE_ASK,     // OP_MONITOR_HIGH_POWER_LOCATION
-            AppOpsManager.MODE_DEFAULT, // OP_GET_USAGE_STATS
+            AppOpsManager.MODE_IGNORED, // OP_GET_USAGE_STATS
             AppOpsManager.MODE_ALLOWED, // OP_MUTE_MICROPHONE
             AppOpsManager.MODE_ALLOWED, // OP_TOAST_WINDOW
             AppOpsManager.MODE_IGNORED, // OP_PROJECT_MEDIA
