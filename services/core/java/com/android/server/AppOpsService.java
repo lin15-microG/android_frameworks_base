@@ -2919,6 +2919,12 @@ public class AppOpsService extends IAppOpsService.Stub {
                 Log.e(TAG, "AppOps getDefaultMode: Can't talk to PM f. Sig.Check", re);
             }
         }
+        // Treble work-around:
+        // Huawei CameraDeaemon runs as root, so motion sensor popup indicates root
+        // Despite granting this access, the popup re-appears after each reboot
+        if (code == AppOpsManager.OP_MOTION_SENSORS && uid == android.os.Process.ROOT_UID) {
+            return AppOpsManager.MODE_ALLOWED;
+        }
         // end
 
         int mode = AppOpsManager.opToDefaultMode(code,
